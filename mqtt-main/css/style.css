@@ -1,0 +1,46 @@
+body{
+  background:lightblue;
+}
+.content{
+  padding:0 3% 3% 3%;
+}
+.card{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  margin-top: 3%;
+  padding: 2%;
+  border-radius: 15px;
+}
+
+
+.flex{
+  margin-top:2%;
+  gap:2%;
+}
+
+.correctionVertical{
+  width: 20%;
+  margin-top: -.2%;
+}
+.text-sm{
+  padding: 0.4rem;
+}
+
+.flex-auto{
+  padding:1% 2% 2% 2%;
+}
+
+.blockButtons{
+  width: 50%;
+  text-align: center;
+}
+
+.blockButtons button{
+  margin-left: 3%;
+}

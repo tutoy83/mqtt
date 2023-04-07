@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>MQTT ISEN </title>
+      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.1/dist/tailwind.min.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+      <script src="js/script.js" type="text/javascript"></script>
+   </head>
+   <body>
+      <header>
+         <button
+            class="mr-2 border-0 bg-transparent py-2 text-xl leading-none transition-shadow duration-150 ease-in-out hover:text-neutral-700 focus:text-neutral-700 dark:hover:text-white dark:focus:text-white lg:hidden"
+            type="button"
+            data-te-collapse-init
+            data-te-target="#navbarSupportedContentX"
+            aria-controls="navbarSupportedContentX"
+            aria-expanded="false"
+            aria-label="Toggle navigation" disabled="disabled">
+            <span class="[&>svg]:w-5">
+               <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6">
+                  <path
+                     oke-linecap="round"
+                     stroke-linejoin="round"
+                     d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+               </svg>
+            </span>
+         </button>
+         </div>
+         </div>
+         </div>
+         </nav>
+         <div
+            class="relative overflow-hidden bg-cover bg-no-repeat"
+            style="
+            background-position: 50%;
+            background-image: url('assets/backIot.jpg');
+            height: 350px;">
+            <div
+               class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed"
+               style="background-color: rgba(0, 0, 0, 0.75)">
+               <div class="flex h-full items-center justify-center">
+                  <div class="px-6 text-center text-white md:px-12">
+                     <h1 class="mb-6 text-5xl font-bold">MQTT Projet 2023</h1>
+                     <h3 class="mb-8 text-3xl font-bold">ISEN</h3>
+                     <button
+                        type="button"
+                        class="inline-block rounded border-2 border-neutral-50 px-6 pt-2 pb-[6px] text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
+                        data-te-ripple-init
+                        data-te-ripple-color="light">
+                     IoT > All
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <div class="content">
+         <div class="card">
+            <h2 class="text-center mb-8 text-3xl font-bold">Allumer les LEDS</h2>
+            <hr>
+            <div class="flex">
+               <div class="blockButtons">
+                  <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" onclick="toggleLed1()">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16" style="margin: 5px">
+                        <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
+                     </svg>
+                     <span>  LED 1 </span>
+                  </button>
+                  <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" onclick="toggleLed2()">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16" style="margin: 5px">
+                        <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
+                     </svg>
+                     <span>  LED 2 </span>
+                  </button>
+                  </button>
+                  <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" onclick="toggleLed3()">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16" style="margin: 5px">
+                        <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
+                     </svg>
+                     <span> LED 3 </span>
+                  </button>
+               </div>
+               <div class="blockButtons">
+                  <ul class="list-outside ...">
+                     <li id="etatLed1"><span style="display: inline-block; width: 1em; height: 1em; background-color: blue; margin-right: 0.5em;"></span> LED 1 est <strong>OFF</strong></li>
+                     <li id="etatLed2"><span style="display: inline-block; width: 1em; height: 1em; background-color: green; margin-right: 0.5em;"></span> LED 2 est <strong>OFF</strong></li>
+                     <li id="etatLed3"><span style="display: inline-block; width: 1em; height: 1em; background-color: red; margin-right: 0.5em;"></span> LED 3 est <strong>OFF</strong></li>
+                 </ul>
+                 
+               </div>
+            </div>
+         </div>
+         <div class="card" onclick="getTemp()">
+            <h2 class="text-center mb-8 text-3xl font-bold">Réception de données</h2>
+            <hr>
+            <div class="flex">
+               <div class="flex-auto w-64 p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg">
+                  <div class="flex items-start justify-between">
+                     <div class="flex flex-col space-y-2">
+                        <span class="text-gray-400">Bouton appuyé</span>
+                        <span class="text-2xl font-semibold" id="buttonPressed">Aucun événement récent</span>
+                     </div>
+                     <div class="p-10 bg-gray-200 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-hand-index-thumb" viewBox="0 0 16 16">
+                           <path d="M6.75 1a.75.75 0 0 1 .75.75V8a.5.5 0 0 0 1 0V5.467l.086-.004c.317-.012.637-.008.816.027.134.027.294.096.448.182.077.042.15.147.15.314V8a.5.5 0 0 0 1 0V6.435l.106-.01c.316-.024.584-.01.708.04.118.046.3.207.486.43.081.096.15.19.2.259V8.5a.5.5 0 1 0 1 0v-1h.342a1 1 0 0 1 .995 1.1l-.271 2.715a2.5 2.5 0 0 1-.317.991l-1.395 2.442a.5.5 0 0 1-.434.252H6.118a.5.5 0 0 1-.447-.276l-1.232-2.465-2.512-4.185a.517.517 0 0 1 .809-.631l2.41 2.41A.5.5 0 0 0 6 9.5V1.75A.75.75 0 0 1 6.75 1zM8.5 4.466V1.75a1.75 1.75 0 1 0-3.5 0v6.543L3.443 6.736A1.517 1.517 0 0 0 1.07 8.588l2.491 4.153 1.215 2.43A1.5 1.5 0 0 0 6.118 16h6.302a1.5 1.5 0 0 0 1.302-.756l1.395-2.441a3.5 3.5 0 0 0 .444-1.389l.271-2.715a2 2 0 0 0-1.99-2.199h-.581a5.114 5.114 0 0 0-.195-.248c-.191-.229-.51-.568-.88-.716-.364-.146-.846-.132-1.158-.108l-.132.012a1.26 1.26 0 0 0-.56-.642 2.632 2.632 0 0 0-.738-.288c-.31-.062-.739-.058-1.05-.046l-.048.002zm2.094 2.025z"/>
+                        </svg>
+                     </div>
+                  </div>
+                  <div>
+                     <span class="inline-block px-3 text-sm text-white bg-blue-600 rounded" id="dateButtonPressed">N/A</span>
+                     <span style="margin-left: 10px;">(dernier appui)</span>
+                   </div>                   
+               </div>
+               <div class="flex-auto w-64 p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg">
+                  <div class="flex items-start justify-between">
+                     <div class="flex flex-col space-y-2">
+                        <span class="text-gray-400">Capteur température</span>
+                        <span class="text-2xl font-semibold" id="valueTemp">Aucun événement récent</span>
+                     </div>
+                     <div class="p-10 bg-gray-200 rounded-md" style="border-radius: 50%;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16" onclick="getTemp()">
+                          <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                        </svg>
+                      </div>                                          
+                  </div>
+                 <div>
+                  <span class="inline-block px-3 text-sm text-white bg-green-600 rounded" id="dateTemp">N/A</span>
+                  <span style="margin-left: 10px;">(click sur soleil pour Get température)</span>
+              </div>                          
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+         <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">� 2023 <a href="https://flowbite.com/" class="hover:underline">ISEN IoT</a>. Toutes reproductions interdites fera l'objet de poursuites judiciaires acharn�es.
+            </span>
+            <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 correctionVertical">
+               <li>
+                  <p class="mr-4 md:mr-6 ">Théo M</p>
+               </li>
+               <li>
+                  <p class="mr-4  md:mr-6 ">Sarah T</p>
+               </li>
+               <li>
+                  <p class="mr-4 md:mr-6 ">Kahina I</p>
+               </li>
+            </ul>
+         </div>
+      </footer>
+   </body>
+</html>
