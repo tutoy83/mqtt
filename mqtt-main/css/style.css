@@ -44,3 +44,6 @@ body{
 .blockButtons button{
   margin-left: 3%;
 }
+.cur{
+  cursor: pointer;
+}
