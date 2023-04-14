@@ -68,14 +68,14 @@ function toggleLed1() {
     state: 1
   };
   //la LED etait OFF et on vient de l'allumer
-  document.getElementById("etatLed1").innerHTML = "?? LED 1 est <strong>ON</strong>";
+  document.getElementById("etatLed1").innerHTML = "🟦 LED 1 est <strong>ON</strong>";
   }else{
     var message = {
     id: 1,
     state: 0
   };
       //la LED etait ON et on vient de eteindre
-      document.getElementById("etatLed1").innerHTML = "?? LED 1 est <strong>OFF</strong>";
+      document.getElementById("etatLed1").innerHTML = "🟦 LED 1 est <strong>OFF</strong>";
   }
 
   message = new Paho.MQTT.Message(JSON.stringify(message));
@@ -92,14 +92,14 @@ function toggleLed2() {
     state: 1
   };
   //la LED etait OFF et on vient de l'allumer
-  document.getElementById("etatLed2").innerHTML = "?? LED 2 est <strong>ON</strong>";
+  document.getElementById("etatLed2").innerHTML = "🟩 LED 2 est <strong>ON</strong>";
   }else{
     var message = {
     id: 2,
     state: 0
   };
       //la LED etait ON et on vient de eteindre
-      document.getElementById("etatLed2").innerHTML = "?? LED 2 est <strong>OFF</strong>";
+      document.getElementById("etatLed2").innerHTML = "🟩 LED 2 est <strong>OFF</strong>";
   }
 
   message = new Paho.MQTT.Message(JSON.stringify(message));
@@ -117,14 +117,14 @@ function toggleLed3() {
     state: 1
   };
   //la LED etait OFF et on vient de l'allumer
-  document.getElementById("etatLed3").innerHTML = "?? LED 3 est <strong>ON</strong>";
+  document.getElementById("etatLed3").innerHTML = "🟥 LED 3 est <strong>ON</strong>";
   }else{
     var message = {
     id: 3,
     state: 0
   };
       //la LED etait ON et on vient de eteindre
-      document.getElementById("etatLed3").innerHTML = "?? LED 3 est <strong>OFF</strong>";
+      document.getElementById("etatLed3").innerHTML = "🟥 LED 3 est <strong>OFF</strong>";
   }
 
   message = new Paho.MQTT.Message(JSON.stringify(message));
@@ -137,13 +137,13 @@ function toggleLed3() {
 
 function getTemp() {
   //1ere etape demande temp
-  alert("Demande temperature envoy�e, veuillez patienter...");
+  alert("Demande temperature envoy�e, veuillez patienter...");
   var message = {
     request: 1
     };
   message = new Paho.MQTT.Message(JSON.stringify(message));
   message.destinationName = "isen16/getTemp";
   client.send(message);
-  console.log("Demande temperature envoy�e");
+  console.log("Demande temperature envoy�e");
 
 }
