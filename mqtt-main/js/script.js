@@ -137,7 +137,7 @@ function toggleLed3() {
 
 function getTemp() {
   //1ere etape demande temp
-  alert("Demande temperature envoy�e, veuillez patienter...");
+  alert("Demande temperature envoyée, veuillez patienter...");
   var message = {
     request: 1
     };
